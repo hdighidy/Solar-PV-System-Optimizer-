@@ -1,0 +1,4 @@
+Brand,Model,Capacity_kWh,DoD,Efficiency,Cost_USD
+Tesla,Powerwall,13.5,0.9,0.95,7000
+LG,RESU10,9.8,0.95,0.94,6000
+BYD,B-Box,10.2,0.9,0.93,5800
