@@ -1,24 +1,3 @@
-import subprocess
-import sys
-import importlib
-
-def install_and_import(package, import_as=None):
-    try:
-        importlib.import_module(import_as or package)
-    except ImportError:
-        print(f"Installing package: {package}")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-    finally:
-        globals()[import_as or package] = importlib.import_module(import_as or package)
-
-# --- Install necessary packages ---
-install_and_import('matplotlib')
-install_and_import('numpy')
-install_and_import('pandas')
-install_and_import('streamlit')
-install_and_import('pymoo')
-install_and_import('scikit-learn', 'sklearn')
-
 import streamlit as st
 import pandas as pd
 import numpy as np
