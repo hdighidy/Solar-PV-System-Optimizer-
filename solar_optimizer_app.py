@@ -1,10 +1,17 @@
+def install_and_import(package):
+    try:
+        __import__(package)
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
 
 import streamlit as st
 import pandas as pd
 import numpy as np
+install_and_import("matplotlib")
 import matplotlib.pyplot as plt
 import io
-
+install_and_import("pymoo")
 from pymoo.core.problem import ElementwiseProblem
 from pymoo.optimize import minimize
 from pymoo.algorithms.moo.nsga2 import NSGA2
